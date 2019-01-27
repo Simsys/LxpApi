@@ -15,7 +15,7 @@ $pip install lxpservice
 Using LxpApi
 ------------
 
-First import the LxpAPi library and pprint for nice view on complex pythen types.
+First import the LxpAPi library and pprint for nice view on complex python types.
 ```python
 >>> from LxpApi import LxpApi
 >>> from pprint import pprint

@@ -6,7 +6,7 @@ import click
 
 from .lxpapi import LxpApi               # local imports
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 NAME = 'lxpservice'
 
 class Logger():
