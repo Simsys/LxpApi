@@ -1,0 +1,36 @@
+from setuptools import setup
+from LxpApi.utils import NAME, VERSION
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setup(
+    name=NAME,
+    version=VERSION,
+    license='LGPL2',
+    description='Command line tool and library to manage LetterXpress print jobs.',
+    long_description=long_description,
+    author='Winfried Simon',
+    author_email='winfried.simon@gmail.com',
+    url='https://github.com/Simsys/LxpApi',
+    py_modules=["my_module"],
+    packages=['LxpApi'],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers, Users',
+        'License :: OSI Approved :: LGPL2',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+    ],
+    keywords='comman-line-tool library print-service',
+    include_package_data=True,
+    install_requires=[
+        'click',
+        'requests',
+        'keyring'
+    ],
+    entry_points={'console_scripts': ['lxpservice=LxpApi:main',],},
+)
