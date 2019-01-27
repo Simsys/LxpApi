@@ -1,4 +1,4 @@
-# lxApi
+# LxpApi
 Library and Command-Line Interface for the LxpApi (www.letterxpress.de)
 
 The package consists of two building blocks:
