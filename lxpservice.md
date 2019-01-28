@@ -32,7 +32,12 @@ Commands:
   delete       Delete job(s).
   send         Send PDF files to print service.
   status       Check the status of the placed print jobs.
+```
 
+Managing Credentials
+--------------------
+
+```
 $ lxpservice credentials --help
 Usage: lxpservice credentials [OPTIONS] [USER] [URL] [APIKEY]
 
@@ -48,46 +53,7 @@ Usage: lxpservice credentials [OPTIONS] [USER] [URL] [APIKEY]
 Options:
   -d, --delete  Deletes password (requires user and url).
   --help        Show this message and exit.
-
-$ lxpservice status --help
-Usage: lxpservice status [OPTIONS]
-
-  Check the status of the placed print jobs.
-
-  A distinction is made between jobs covered by the credit balance and jobs
-  not covered.
-
-Options:
-  --help  Show this message and exit.
-
-$ lxpservice send --help
-Usage: lxpservice send [OPTIONS] FILE_OR_DIRECTORY
-
-  Send PDF files to print service.
-
-  Either individual files or the PDF files of a directory can be
-  transferred. Different options can be selected.
-
-Options:
-  -c, --color          Send colored Letters.
-  -i, --international  Send letters to international destinations.
-  -d, --duplex         Send double sided printed letters.
-  --help               Show this message and exit.
-
-$ lxpservice status --help
-Usage: lxpservice status [OPTIONS]
-
-  Check the status of the placed print jobs.
-
-  A distinction is made between jobs covered by the credit balance and jobs
-  not covered.
-
-Options:
-  --help  Show this message and exit.
 ```
-
-Managing Credentials
---------------------
 
 First, the credentials are passed to lxpservice. Lxpservice stores the user name and the url in the file ".lxpservice.ini" 
 in the home directory of the current user. The necessary Api Key is stored safely in the password manager of the operating 
@@ -106,6 +72,21 @@ $ lxpservice credentials <User_2>
 Send PDF Files
 --------------
 
+```
+$ lxpservice send --help
+Usage: lxpservice send [OPTIONS] FILE_OR_DIRECTORY
+
+  Send PDF files to print service.
+
+  Either individual files or the PDF files of a directory can be
+  transferred. Different options can be selected.
+
+Options:
+  -c, --color          Send colored Letters.
+  -i, --international  Send letters to international destinations.
+  -d, --duplex         Send double sided printed letters.
+  --help               Show this message and exit.
+```
 PDF files are sent by specifying the path to the file. By adding optional arguments, you can influence the way the document 
 is delivered. If you specify a path to a directory, lxpservice loads all PDF documents in that directory to the server. See 
 also the help pages. 
@@ -127,6 +108,18 @@ Sending file(s) to print server...
 Check Status of Print Jobs
 --------------------------
 
+```
+$ lxpservice status --help
+Usage: lxpservice status [OPTIONS]
+
+  Check the status of the placed print jobs.
+
+  A distinction is made between jobs covered by the credit balance and jobs
+  not covered.
+
+Options:
+  --help  Show this message and exit.
+```
 With the sub command status you can easily check which files have been uploaded to the server.
 ```
 lxpservice status
@@ -142,6 +135,19 @@ Date                     Id Pgs Col Cost Filename
 Delete Print jobs
 -----------------
 
+```
+$ lxpservice delete --help
+Usage: lxpservice delete [OPTIONS]
+
+  Delete job(s).
+
+  Delete a job identified by the id or delete all jobs of the print service.
+
+Options:
+  -i, --id INTEGER  Delete a single order.
+  -a, --all         Delete all jobs.
+  --help            Show this message and exit.
+```  
 Print jobs can be deleted with the delete command. A distinction is made between deleting a file 
 (-i <id>) and all files (-a).
 ```
