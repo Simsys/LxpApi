@@ -10,6 +10,7 @@ setup(
     license='LGPL2',
     description='Command line tool and library to manage LetterXpress print jobs.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     author='Winfried Simon',
     author_email='winfried.simon@gmail.com',
     url='https://github.com/Simsys/LxpApi',
