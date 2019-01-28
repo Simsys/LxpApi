@@ -149,7 +149,7 @@ Options:
   --help            Show this message and exit.
 ```  
 Print jobs can be deleted with the delete command. A distinction is made between deleting a file 
-(-i <id>) and all files (-a).
+(-i id) and all files (-a).
 ```
 $ lxpservice delete -i 3424
 User <User>
@@ -165,7 +165,3 @@ Url https://sandbox.letterxpress.de/v1/
 Deleting order(s):
   one-page.pdf
   one-page.pdf
-```
-```
-```
-```
