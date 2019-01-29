@@ -3,16 +3,16 @@ version: build{build}
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-    - PYTHON: "C:\\Python36-x64"
-      PYTHON_VERSION: "3.6.7"
-      PYTHON_ARCH: "64"
+#    - PYTHON: "C:\\Python36-x64"
+#      PYTHON_VERSION: "3.6.7"
+#      PYTHON_ARCH: "64"
   
     
 clone_folder: c:\dev\lxpapi
 clone_depth: 5
 
 install:
-  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - SET PATH=C:\\Python36-x64;C:\\Python36-x64\\Scripts;%PATH%
 
 before_build:
   - cd c:\dev\lxpapi
@@ -23,7 +23,7 @@ before_build:
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   
 build_script:
-  - python -m nuitka --follow-imports LxpApi\\lxpservice.py
+  - C:\\Python36-x64\\python -m nuitka --follow-imports LxpApi\\lxpservice.py
  
 artifacts:
   - path: lxpservice.exe
