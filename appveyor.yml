@@ -2,9 +2,10 @@ version: build{build}
 
 environment:
   matrix:
-  - PYTHON: "C:\\Python36-x64"
-    PYTHON_VERSION: "3.6.7"
-    PYTHON_ARCH: "64"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    - PYTHON: "C:\\Python36-x64"
+      PYTHON_VERSION: "3.6.7"
+      PYTHON_ARCH: "64"
   
     
 clone_folder: c:\dev\lxpapi
@@ -12,14 +13,14 @@ clone_depth: 5
 
 install:
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
-  
+
 before_build:
   - cd c:\dev\lxpapi
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   - pip install click
   - pip install keyring
   - pip install requests
   - pip install nuitka
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   
 build_script:
   - python -m nuitka --follow-imports LxpApi\\lxpservice.py
