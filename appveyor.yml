@@ -28,12 +28,14 @@ build_script:
 artifacts:
   - path: lxpservice.exe
 
+
 deploy:
   description: 'Latest lxpservice Release'
   provider: GitHub
   auth_token:
     secure: WEV9mRJC/pC2HFqJMXbLzEfBXAHu8aGDFIR8ARSip9n6jDJyCz3KstjSPM4VsgKc
   artifact: lxpservice.exe
+  artifact: C:\\Python36-x64\dll\python36.dll
   draft: false
   prerelease: false
   force_update: true
