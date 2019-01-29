@@ -1,0 +1,40 @@
+version: build{build}
+
+environment:
+  matrix:
+  - PYTHON: "C:\\Python36-x64"
+    PYTHON_VERSION: "3.6.7"
+    PYTHON_ARCH: "64"
+  
+    
+clone_folder: c:\dev\lxpapi
+clone_depth: 5
+
+install:
+  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  
+before_build:
+  - cd c:\dev\lxpapi
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - pip install click
+  - pip install keyring
+  - pip install requests
+  - pip install nuitka
+  
+build_script:
+  - python -m nuitka --follow-imports LxpApi\\lxpservice.py
+ 
+artifacts:
+  - path: lxpservice.exe
+
+deploy:
+  description: 'Latest lxpservice Release'
+  provider: GitHub
+  auth_token:
+    secure: WEV9mRJC/pC2HFqJMXbLzEfBXAHu8aGDFIR8ARSip9n6jDJyCz3KstjSPM4VsgKc
+  artifact: lxpservice.exe
+  draft: false
+  prerelease: false
+  force_update: true
+  on:
+    branch: appvoyer              # release from master branch only
