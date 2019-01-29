@@ -3,6 +3,8 @@ from LxpApi.utils import NAME, VERSION
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+with open("lxpservice.md", "r") as fh:
+    long_description += '\n' + fh.read()
 
 setup(
     name=NAME,
