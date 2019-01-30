@@ -8,7 +8,7 @@ environment:
 #      PYTHON_ARCH: "64"
   
     
-clone_folder: c:\\dev\\lxpapi
+clone_folder: c:\dev\lxpapi
 clone_depth: 5
 
 install:
