@@ -27,6 +27,7 @@ build_script:
  
 artifacts:
   - path: lxpservice.exe
+  - path: C:\\Python36-x64\\python36.dll
 
 
 deploy:
@@ -34,7 +35,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: WEV9mRJC/pC2HFqJMXbLzEfBXAHu8aGDFIR8ARSip9n6jDJyCz3KstjSPM4VsgKc
-  artifact: lxpservice.exe
+  artifact: /.*/
   draft: false
   prerelease: false
   force_update: true
