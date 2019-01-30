@@ -4,7 +4,7 @@ from configparser import ConfigParser
 import keyring                          # additional library imports
 import click
 
-from .lxpapi import LxpApi               # local imports
+from lxpapi import LxpApi               # local imports
 
 VERSION = '0.0.2'
 NAME = 'lxpservice'
