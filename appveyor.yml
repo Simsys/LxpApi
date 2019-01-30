@@ -27,7 +27,7 @@ build_script:
  
 artifacts:
   - path: lxpservice.exe
-  - path: C:\\Python36-x64\\python36.dll
+  - path: ..\\..\\Python36-x64\\python36.dll
 
 
 deploy:
