@@ -6,7 +6,7 @@ from pathlib import Path
 
 import click                # additional library imports
 
-from src import utils                # local imports
+import utils                # local imports
 
 logger = utils.Logger()
 
