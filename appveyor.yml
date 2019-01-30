@@ -24,7 +24,7 @@ before_build:
   - copy c:\\Python36-x64\\python36.dll c:\\dev\\lxpapi
   
 build_script:
-  - C:\\Python36-x64\\python -m nuitka --standalone LxpApi\\lxpservice.py
+  - C:\\Python36-x64\\python -m nuitka --standalone --assume-yes-for-downloads LxpApi\\lxpservice.py
  
 artifacts:
   - path: lxpservice.exe
