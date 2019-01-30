@@ -9,7 +9,6 @@ environment:
   
     
 clone_folder: c:\dev\lxpapi
-clone_depth: 5
 
 install:
   - SET PATH=C:\\Python36-x64;C:\\Python36-x64\\Scripts;%PATH%
@@ -19,17 +18,13 @@ before_build:
   - pip install click
   - pip install keyring
   - pip install requests
-  - pip install nuitka
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
-  - copy c:\\Python36-x64\\python36.dll c:\\dev\\lxpapi
+  - pip install pyinstaller
   
 build_script:
-  - C:\\Python36-x64\\python -m nuitka --standalone --assume-yes-for-downloads LxpApi\\lxpservice.py
+  - pyinstaller -F LxpApi\\lxpservice.py
  
 artifacts:
   - path: lxpservice.exe
-  - path: python36.dll
-
 
 deploy:
   description: 'Latest lxpservice Release'
