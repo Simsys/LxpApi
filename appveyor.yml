@@ -24,7 +24,7 @@ before_build:
   - copy c:\\Python36-x64\\python36.dll c:\\dev\\lxpapi
   
 build_script:
-  - C:\\Python36-x64\\python -m nuitka --follow-imports --include-plugin-directory C:\\Python36-x64\\lib\\site-packages\\keyring --include-plugin-files C:\\Python36-x64\\lib\\site-packages\\certifi\\cacert.pem LxpApi\\lxpservice.py
+  - C:\\Python36-x64\\python -m nuitka --include-package=click --include-package=keyring --include-package=requests --standalone LxpApi\\lxpservice.py
  
 artifacts:
   - path: lxpservice.exe
