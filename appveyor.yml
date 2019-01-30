@@ -8,7 +8,7 @@ environment:
 #      PYTHON_ARCH: "64"
   
     
-clone_folder: c:\dev\lxpapi
+clone_folder: c:\\dev\\lxpapi
 clone_depth: 5
 
 install:
@@ -21,6 +21,7 @@ before_build:
   - pip install requests
   - pip install nuitka
   - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - copy c:\\Python36-x64\\python36.dll c:\\dev\\lxpapi
   
 build_script:
   - C:\\Python36-x64\\python -m nuitka --follow-imports LxpApi\\lxpservice.py
