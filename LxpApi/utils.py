@@ -1,12 +1,13 @@
 from pathlib import Path                # standard library imports
 from configparser import ConfigParser
+import sys
 
 import keyring                          # additional library imports
 import click
 
 from .lxpapi import LxpApi               # local imports
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 NAME = 'lxpservice'
 
 class Logger():
@@ -75,4 +76,15 @@ def access(logger, delete=None, user=None, url=None, apikey=None, verbose=True):
     logger.info('Url %s' % url)
 
     lxpApi = LxpApi(url, user, apikey, logger, True)
+
+    try:
+        msg = lxpApi.get_balance()
+    except:
+        logger.error('No access')
+        sys.exit(1)
+
+    if msg['status'] != 200:
+        logger.error(msg['message'])
+        sys.exit(1)
+
     return lxpApi

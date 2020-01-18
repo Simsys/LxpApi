@@ -54,6 +54,8 @@ def status():
                 cost = float(job['cost']) + float(job['cost_vat'])
                 logger.info('%-20s %6s %3s %3s %4.2f %-35s' % 
                      (job['date'], job['jid'], job['pages'], job['color'], cost, job['address'][0:35]))
+        elif jobs['status'] == 404:
+            logger.info("%s\n  <%s>" % (comment, jobs['message']))
 
     hold_jobs = lxpApi.get_jobs('hold')
     print_jobs(hold_jobs, '\nThese letters are in the queue (credit exhausted):')
